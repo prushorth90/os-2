@@ -122,6 +122,7 @@ void            wakeup(void*);
 void            yield(void);
 int             mprotect(void *addr, int len);
 int             munprotect(void *addr, int len);
+yjknjkn;';;l;'koip=;*null;
 // swtch.S
 void            swtch(struct context**, struct context*);
 
