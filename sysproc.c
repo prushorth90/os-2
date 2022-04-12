@@ -89,3 +89,23 @@ sys_uptime(void)
   release(&tickslock);
   return xticks;
 }
+
+// all of them have void and formal parameters appear to differ
+int
+sys_mprotect(void)
+{
+  void *addr;
+  int len;
+
+  return mprotect(addr,len);
+}
+
+// all of them have void and formal parameters appear to differ
+int
+sys_munprotect(void) {
+  void *addr;
+  int len;
+  
+  return munprotect(addr,len);
+
+}
