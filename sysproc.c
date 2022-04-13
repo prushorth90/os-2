@@ -126,10 +126,11 @@ sys_munprotect(void) {
   // CASE 2: Addr points to a region not in address space
   // seen something in vm.c in argptr
   // Not sure how to call
-  // initialize len like in sys_sleep
+  // initialize len like in this file sys_sleep
   if(argint(0, &len) < 0){
     return -1;
   }
+  // initialize addr like in this file sys_sbrk
   addr = (void *)myproc()->vlimit;
 
   // CASE 1: seen in vm.c in loaduvm:  addr must be page aligned);

@@ -535,9 +535,64 @@ procdump(void)
   }
 }
 
+// Used in vm.c Return the address of the PTE in page table pgdir
+// that corresponds to virtual address va.  If alloc!=0,
+// create any required page table pages.
+static pte_t *
+walkpgdir(pde_t *pgdir, const void *va, int alloc)
+{
+  pde_t *pde;
+  pte_t *pgtab;
+
+  pde = &pgdir[PDX(va)];
+  if(*pde & PTE_P){
+    pgtab = (pte_t*)P2V(PTE_ADDR(*pde));
+  } else {
+    // No page table at this pde, so make one (if caller didn't forbid it)
+    if(!alloc || (pgtab = (pte_t*)kalloc()) == 0)
+      return 0;
+    // Make sure all those PTE_P bits are zero.
+    memset(pgtab, 0, PGSIZE);
+    // The permissions here are overly generous, but they can
+    // be further restricted by the permissions in the page table
+    // entries, if necessary.
+    *pde = V2P(pgtab) | PTE_P | PTE_W | PTE_U;
+  }
+  return &pgtab[PTX(va)];
+}
+
 int
 mprotect(void *addr, int len) {
-  
+  pte_t *pte;
+  pde_t *pgdir;
+  pgdir=0;
+  // may need to remove later
+  //int lowerbound = PGROUNDDOWN((int) addr);
+  //lower < addr + lem
+
+  // Repeat this for len number of pages
+  while(len != 0) {
+    // seen in vm.c or each page table entry change all protection bit to read only
+    for(int i = (int)addr; i < (int)PGSIZE; i+= PGSIZE){
+      //seen in VM.C clearpteu METHOD and loaduvm METHOD how to get pgdir
+      pte = walkpgdir(pgdir,addr + i, 0);
+      // NOT SURE in VM.C clearpteu METHOD how to change protection bit in page table entry from write to read
+      *pte &= ~PTE_W;
+      pgdir++;
+    }
+    len--;
+  }
+  // NOT SURE ABOUT INHERIT FROM fork
+  // in proc.c line 182
+  //fork()
+
+  // FAIL CASES HANDLED EARLIER
+
+  // using vm.c in line 157 and line 181
+  //lcr3(V2P(p->pgdir));
+  //lcr3(V2P(kpgdir));
+  lcr3(V2P(pgdir));
+  // NOT SURE ABOUT LCR3
   return 0;
 
 }
@@ -545,6 +600,32 @@ mprotect(void *addr, int len) {
 
 int
 munprotect(void *addr, int len) {
+  pte_t *pte;
+  pde_t *pgdir;
+  pgdir=0;
 
+  // Repeat this for len number of pages
+  while(len != 0) {
+    // seen in vm.c or each page table entry change all protection bit to read only
+    for(int i = (int)addr; i < (int)PGSIZE; i+= PGSIZE){
+      //NOT SURE in VM.C clearpteu METHOD and loaduvm METHOD
+      pte = walkpgdir(pgdir,addr + i,0);
+      // NOT SURE in VM.C clearpteu METHOD also SEE MMU.h if protection bit in page table entry to  change read to write
+      *pte &= PTE_W;
+      pgdir++;
+    }
+    len--;
+  }
+  // NOT SURE ABOUT INHERIT FROM fork
+  // in proc.c line 182
+  //fork()
+
+  // FAIL CASES HANDLED EARLIER
+
+  // using vm.c in line 157 and line 181
+  //lcr3(V2P(p->pgdir));
+  //lcr3(V2P(kpgdir));
+  lcr3(V2P(pgdir));
+  // NOT SURE ABOUT LCR3
   return 0;
 }
