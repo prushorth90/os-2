@@ -96,8 +96,8 @@ sys_mprotect(void)
 {
   void *addr;
   int len;
-
-  return mprotect(addr,len);
+  return 0;
+  //return mprotect(addr,len);
 }
 
 // all of them have void and formal parameters appear to differ
@@ -105,7 +105,8 @@ int
 sys_munprotect(void) {
   void *addr;
   int len;
-  
-  return munprotect(addr,len);
+
+  //return munprotect(addr,len);
+  return 0;
 
 }
