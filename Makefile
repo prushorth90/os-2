@@ -190,6 +190,8 @@ UPROGS := \
 	_stressfs\
 	_usertests\
 	_wc\
+	_mprotect\
+	_munprotect\
 	_zombie\
 
 fs.img: mkfs README $(UPROGS)
