@@ -161,7 +161,7 @@ Discarded input sections
                 0x0000000000000000        0x0 sysproc.o
  .note.gnu.property
                 0x0000000000000000       0x1c sysproc.o
- .eh_frame      0x0000000000000000      0x14c sysproc.o
+ .eh_frame      0x0000000000000000      0x174 sysproc.o
  .note.GNU-stack
                 0x0000000000000000        0x0 trap.o
  .note.gnu.property
@@ -187,7 +187,7 @@ Linker script and memory map
 
                 0x0000000080100000                . = 0x80100000
 
-.text           0x0000000080100000     0x713a load address 0x0000000000100000
+.text           0x0000000080100000     0x71ca load address 0x0000000000100000
  *(.text .stub .text.* .gnu.linkonce.t.*)
  .text          0x0000000080100000       0x34 entry.o
                 0x0000000080100000                multiboot_header
@@ -361,7 +361,7 @@ Linker script and memory map
                 0x0000000080105500                sys_exec
                 0x0000000080105600                sys_pipe
  *fill*         0x00000000801056d9        0x7 
- .text          0x00000000801056e0      0x1e7 sysproc.o
+ .text          0x00000000801056e0      0x26f sysproc.o
                 0x00000000801056e0                sys_fork
                 0x00000000801056f0                sys_exit
                 0x0000000080105710                sys_wait
@@ -371,385 +371,385 @@ Linker script and memory map
                 0x00000000801057d0                sys_sleep
                 0x0000000080105880                sys_uptime
                 0x00000000801058b0                sys_mprotect
-                0x00000000801058c0                sys_munprotect
- .text          0x00000000801058c7       0x23 trapasm.o
-                0x00000000801058c7                alltraps
-                0x00000000801058df                trapret
- *fill*         0x00000000801058ea        0x6 
- .text          0x00000000801058f0      0x2ff trap.o
-                0x00000000801058f0                tvinit
-                0x0000000080105970                idtinit
-                0x00000000801059a0                trap
- *fill*         0x0000000080105bef        0x1 
- .text          0x0000000080105bf0      0x189 uart.o
-                0x0000000080105c70                uartinit
-                0x0000000080105d30                uartputc
-                0x0000000080105d60                uartintr
- .text          0x0000000080105d79      0xa72 vectors.o
-                0x0000000080105d79                vector0
-                0x0000000080105d82                vector1
-                0x0000000080105d8b                vector2
-                0x0000000080105d94                vector3
-                0x0000000080105d9d                vector4
-                0x0000000080105da6                vector5
-                0x0000000080105daf                vector6
-                0x0000000080105db8                vector7
-                0x0000000080105dc1                vector8
-                0x0000000080105dc8                vector9
-                0x0000000080105dd1                vector10
-                0x0000000080105dd8                vector11
-                0x0000000080105ddf                vector12
-                0x0000000080105de6                vector13
-                0x0000000080105ded                vector14
-                0x0000000080105df4                vector15
-                0x0000000080105dfd                vector16
-                0x0000000080105e06                vector17
-                0x0000000080105e0d                vector18
-                0x0000000080105e16                vector19
-                0x0000000080105e1f                vector20
-                0x0000000080105e28                vector21
-                0x0000000080105e31                vector22
-                0x0000000080105e3a                vector23
-                0x0000000080105e43                vector24
-                0x0000000080105e4c                vector25
-                0x0000000080105e55                vector26
-                0x0000000080105e5e                vector27
-                0x0000000080105e67                vector28
-                0x0000000080105e70                vector29
-                0x0000000080105e79                vector30
-                0x0000000080105e82                vector31
-                0x0000000080105e8b                vector32
-                0x0000000080105e94                vector33
-                0x0000000080105e9d                vector34
-                0x0000000080105ea6                vector35
-                0x0000000080105eaf                vector36
-                0x0000000080105eb8                vector37
-                0x0000000080105ec1                vector38
-                0x0000000080105eca                vector39
-                0x0000000080105ed3                vector40
-                0x0000000080105edc                vector41
-                0x0000000080105ee5                vector42
-                0x0000000080105eee                vector43
-                0x0000000080105ef7                vector44
-                0x0000000080105f00                vector45
-                0x0000000080105f09                vector46
-                0x0000000080105f12                vector47
-                0x0000000080105f1b                vector48
-                0x0000000080105f24                vector49
-                0x0000000080105f2d                vector50
-                0x0000000080105f36                vector51
-                0x0000000080105f3f                vector52
-                0x0000000080105f48                vector53
-                0x0000000080105f51                vector54
-                0x0000000080105f5a                vector55
-                0x0000000080105f63                vector56
-                0x0000000080105f6c                vector57
-                0x0000000080105f75                vector58
-                0x0000000080105f7e                vector59
-                0x0000000080105f87                vector60
-                0x0000000080105f90                vector61
-                0x0000000080105f99                vector62
-                0x0000000080105fa2                vector63
-                0x0000000080105fab                vector64
-                0x0000000080105fb4                vector65
-                0x0000000080105fbd                vector66
-                0x0000000080105fc6                vector67
-                0x0000000080105fcf                vector68
-                0x0000000080105fd8                vector69
-                0x0000000080105fe1                vector70
-                0x0000000080105fea                vector71
-                0x0000000080105ff3                vector72
-                0x0000000080105ffc                vector73
-                0x0000000080106005                vector74
-                0x000000008010600e                vector75
-                0x0000000080106017                vector76
-                0x0000000080106020                vector77
-                0x0000000080106029                vector78
-                0x0000000080106032                vector79
-                0x000000008010603b                vector80
-                0x0000000080106044                vector81
-                0x000000008010604d                vector82
-                0x0000000080106056                vector83
-                0x000000008010605f                vector84
-                0x0000000080106068                vector85
-                0x0000000080106071                vector86
-                0x000000008010607a                vector87
-                0x0000000080106083                vector88
-                0x000000008010608c                vector89
-                0x0000000080106095                vector90
-                0x000000008010609e                vector91
-                0x00000000801060a7                vector92
-                0x00000000801060b0                vector93
-                0x00000000801060b9                vector94
-                0x00000000801060c2                vector95
-                0x00000000801060cb                vector96
-                0x00000000801060d4                vector97
-                0x00000000801060dd                vector98
-                0x00000000801060e6                vector99
-                0x00000000801060ef                vector100
-                0x00000000801060f8                vector101
-                0x0000000080106101                vector102
-                0x000000008010610a                vector103
-                0x0000000080106113                vector104
-                0x000000008010611c                vector105
-                0x0000000080106125                vector106
-                0x000000008010612e                vector107
-                0x0000000080106137                vector108
-                0x0000000080106140                vector109
-                0x0000000080106149                vector110
-                0x0000000080106152                vector111
-                0x000000008010615b                vector112
-                0x0000000080106164                vector113
-                0x000000008010616d                vector114
-                0x0000000080106176                vector115
-                0x000000008010617f                vector116
-                0x0000000080106188                vector117
-                0x0000000080106191                vector118
-                0x000000008010619a                vector119
-                0x00000000801061a3                vector120
-                0x00000000801061ac                vector121
-                0x00000000801061b5                vector122
-                0x00000000801061be                vector123
-                0x00000000801061c7                vector124
-                0x00000000801061d0                vector125
-                0x00000000801061d9                vector126
-                0x00000000801061e2                vector127
-                0x00000000801061eb                vector128
-                0x00000000801061f7                vector129
-                0x0000000080106203                vector130
-                0x000000008010620f                vector131
-                0x000000008010621b                vector132
-                0x0000000080106227                vector133
-                0x0000000080106233                vector134
-                0x000000008010623f                vector135
-                0x000000008010624b                vector136
-                0x0000000080106257                vector137
-                0x0000000080106263                vector138
-                0x000000008010626f                vector139
-                0x000000008010627b                vector140
-                0x0000000080106287                vector141
-                0x0000000080106293                vector142
-                0x000000008010629f                vector143
-                0x00000000801062ab                vector144
-                0x00000000801062b7                vector145
-                0x00000000801062c3                vector146
-                0x00000000801062cf                vector147
-                0x00000000801062db                vector148
-                0x00000000801062e7                vector149
-                0x00000000801062f3                vector150
-                0x00000000801062ff                vector151
-                0x000000008010630b                vector152
-                0x0000000080106317                vector153
-                0x0000000080106323                vector154
-                0x000000008010632f                vector155
-                0x000000008010633b                vector156
-                0x0000000080106347                vector157
-                0x0000000080106353                vector158
-                0x000000008010635f                vector159
-                0x000000008010636b                vector160
-                0x0000000080106377                vector161
-                0x0000000080106383                vector162
-                0x000000008010638f                vector163
-                0x000000008010639b                vector164
-                0x00000000801063a7                vector165
-                0x00000000801063b3                vector166
-                0x00000000801063bf                vector167
-                0x00000000801063cb                vector168
-                0x00000000801063d7                vector169
-                0x00000000801063e3                vector170
-                0x00000000801063ef                vector171
-                0x00000000801063fb                vector172
-                0x0000000080106407                vector173
-                0x0000000080106413                vector174
-                0x000000008010641f                vector175
-                0x000000008010642b                vector176
-                0x0000000080106437                vector177
-                0x0000000080106443                vector178
-                0x000000008010644f                vector179
-                0x000000008010645b                vector180
-                0x0000000080106467                vector181
-                0x0000000080106473                vector182
-                0x000000008010647f                vector183
-                0x000000008010648b                vector184
-                0x0000000080106497                vector185
-                0x00000000801064a3                vector186
-                0x00000000801064af                vector187
-                0x00000000801064bb                vector188
-                0x00000000801064c7                vector189
-                0x00000000801064d3                vector190
-                0x00000000801064df                vector191
-                0x00000000801064eb                vector192
-                0x00000000801064f7                vector193
-                0x0000000080106503                vector194
-                0x000000008010650f                vector195
-                0x000000008010651b                vector196
-                0x0000000080106527                vector197
-                0x0000000080106533                vector198
-                0x000000008010653f                vector199
-                0x000000008010654b                vector200
-                0x0000000080106557                vector201
-                0x0000000080106563                vector202
-                0x000000008010656f                vector203
-                0x000000008010657b                vector204
-                0x0000000080106587                vector205
-                0x0000000080106593                vector206
-                0x000000008010659f                vector207
-                0x00000000801065ab                vector208
-                0x00000000801065b7                vector209
-                0x00000000801065c3                vector210
-                0x00000000801065cf                vector211
-                0x00000000801065db                vector212
-                0x00000000801065e7                vector213
-                0x00000000801065f3                vector214
-                0x00000000801065ff                vector215
-                0x000000008010660b                vector216
-                0x0000000080106617                vector217
-                0x0000000080106623                vector218
-                0x000000008010662f                vector219
-                0x000000008010663b                vector220
-                0x0000000080106647                vector221
-                0x0000000080106653                vector222
-                0x000000008010665f                vector223
-                0x000000008010666b                vector224
-                0x0000000080106677                vector225
-                0x0000000080106683                vector226
-                0x000000008010668f                vector227
-                0x000000008010669b                vector228
-                0x00000000801066a7                vector229
-                0x00000000801066b3                vector230
-                0x00000000801066bf                vector231
-                0x00000000801066cb                vector232
-                0x00000000801066d7                vector233
-                0x00000000801066e3                vector234
-                0x00000000801066ef                vector235
-                0x00000000801066fb                vector236
-                0x0000000080106707                vector237
-                0x0000000080106713                vector238
-                0x000000008010671f                vector239
-                0x000000008010672b                vector240
-                0x0000000080106737                vector241
-                0x0000000080106743                vector242
-                0x000000008010674f                vector243
-                0x000000008010675b                vector244
-                0x0000000080106767                vector245
-                0x0000000080106773                vector246
-                0x000000008010677f                vector247
-                0x000000008010678b                vector248
-                0x0000000080106797                vector249
-                0x00000000801067a3                vector250
-                0x00000000801067af                vector251
-                0x00000000801067bb                vector252
-                0x00000000801067c7                vector253
-                0x00000000801067d3                vector254
-                0x00000000801067df                vector255
- *fill*         0x00000000801067eb        0x5 
- .text          0x00000000801067f0      0x94a vm.o
-                0x00000000801069b0                seginit
-                0x0000000080106a40                switchkvm
-                0x0000000080106a60                switchuvm
-                0x0000000080106b70                inituvm
-                0x0000000080106bf0                loaduvm
-                0x0000000080106cc0                allocuvm
-                0x0000000080106df0                deallocuvm
-                0x0000000080106e20                freevm
-                0x0000000080106ea0                setupkvm
-                0x0000000080106f20                kvmalloc
-                0x0000000080106f40                clearpteu
-                0x0000000080106f70                copyuvm
-                0x0000000080107070                uva2ka
-                0x00000000801070b0                copyout
+                0x0000000080105900                sys_munprotect
+ .text          0x000000008010594f       0x23 trapasm.o
+                0x000000008010594f                alltraps
+                0x0000000080105967                trapret
+ *fill*         0x0000000080105972        0xe 
+ .text          0x0000000080105980      0x2ff trap.o
+                0x0000000080105980                tvinit
+                0x0000000080105a00                idtinit
+                0x0000000080105a30                trap
+ *fill*         0x0000000080105c7f        0x1 
+ .text          0x0000000080105c80      0x189 uart.o
+                0x0000000080105d00                uartinit
+                0x0000000080105dc0                uartputc
+                0x0000000080105df0                uartintr
+ .text          0x0000000080105e09      0xa72 vectors.o
+                0x0000000080105e09                vector0
+                0x0000000080105e12                vector1
+                0x0000000080105e1b                vector2
+                0x0000000080105e24                vector3
+                0x0000000080105e2d                vector4
+                0x0000000080105e36                vector5
+                0x0000000080105e3f                vector6
+                0x0000000080105e48                vector7
+                0x0000000080105e51                vector8
+                0x0000000080105e58                vector9
+                0x0000000080105e61                vector10
+                0x0000000080105e68                vector11
+                0x0000000080105e6f                vector12
+                0x0000000080105e76                vector13
+                0x0000000080105e7d                vector14
+                0x0000000080105e84                vector15
+                0x0000000080105e8d                vector16
+                0x0000000080105e96                vector17
+                0x0000000080105e9d                vector18
+                0x0000000080105ea6                vector19
+                0x0000000080105eaf                vector20
+                0x0000000080105eb8                vector21
+                0x0000000080105ec1                vector22
+                0x0000000080105eca                vector23
+                0x0000000080105ed3                vector24
+                0x0000000080105edc                vector25
+                0x0000000080105ee5                vector26
+                0x0000000080105eee                vector27
+                0x0000000080105ef7                vector28
+                0x0000000080105f00                vector29
+                0x0000000080105f09                vector30
+                0x0000000080105f12                vector31
+                0x0000000080105f1b                vector32
+                0x0000000080105f24                vector33
+                0x0000000080105f2d                vector34
+                0x0000000080105f36                vector35
+                0x0000000080105f3f                vector36
+                0x0000000080105f48                vector37
+                0x0000000080105f51                vector38
+                0x0000000080105f5a                vector39
+                0x0000000080105f63                vector40
+                0x0000000080105f6c                vector41
+                0x0000000080105f75                vector42
+                0x0000000080105f7e                vector43
+                0x0000000080105f87                vector44
+                0x0000000080105f90                vector45
+                0x0000000080105f99                vector46
+                0x0000000080105fa2                vector47
+                0x0000000080105fab                vector48
+                0x0000000080105fb4                vector49
+                0x0000000080105fbd                vector50
+                0x0000000080105fc6                vector51
+                0x0000000080105fcf                vector52
+                0x0000000080105fd8                vector53
+                0x0000000080105fe1                vector54
+                0x0000000080105fea                vector55
+                0x0000000080105ff3                vector56
+                0x0000000080105ffc                vector57
+                0x0000000080106005                vector58
+                0x000000008010600e                vector59
+                0x0000000080106017                vector60
+                0x0000000080106020                vector61
+                0x0000000080106029                vector62
+                0x0000000080106032                vector63
+                0x000000008010603b                vector64
+                0x0000000080106044                vector65
+                0x000000008010604d                vector66
+                0x0000000080106056                vector67
+                0x000000008010605f                vector68
+                0x0000000080106068                vector69
+                0x0000000080106071                vector70
+                0x000000008010607a                vector71
+                0x0000000080106083                vector72
+                0x000000008010608c                vector73
+                0x0000000080106095                vector74
+                0x000000008010609e                vector75
+                0x00000000801060a7                vector76
+                0x00000000801060b0                vector77
+                0x00000000801060b9                vector78
+                0x00000000801060c2                vector79
+                0x00000000801060cb                vector80
+                0x00000000801060d4                vector81
+                0x00000000801060dd                vector82
+                0x00000000801060e6                vector83
+                0x00000000801060ef                vector84
+                0x00000000801060f8                vector85
+                0x0000000080106101                vector86
+                0x000000008010610a                vector87
+                0x0000000080106113                vector88
+                0x000000008010611c                vector89
+                0x0000000080106125                vector90
+                0x000000008010612e                vector91
+                0x0000000080106137                vector92
+                0x0000000080106140                vector93
+                0x0000000080106149                vector94
+                0x0000000080106152                vector95
+                0x000000008010615b                vector96
+                0x0000000080106164                vector97
+                0x000000008010616d                vector98
+                0x0000000080106176                vector99
+                0x000000008010617f                vector100
+                0x0000000080106188                vector101
+                0x0000000080106191                vector102
+                0x000000008010619a                vector103
+                0x00000000801061a3                vector104
+                0x00000000801061ac                vector105
+                0x00000000801061b5                vector106
+                0x00000000801061be                vector107
+                0x00000000801061c7                vector108
+                0x00000000801061d0                vector109
+                0x00000000801061d9                vector110
+                0x00000000801061e2                vector111
+                0x00000000801061eb                vector112
+                0x00000000801061f4                vector113
+                0x00000000801061fd                vector114
+                0x0000000080106206                vector115
+                0x000000008010620f                vector116
+                0x0000000080106218                vector117
+                0x0000000080106221                vector118
+                0x000000008010622a                vector119
+                0x0000000080106233                vector120
+                0x000000008010623c                vector121
+                0x0000000080106245                vector122
+                0x000000008010624e                vector123
+                0x0000000080106257                vector124
+                0x0000000080106260                vector125
+                0x0000000080106269                vector126
+                0x0000000080106272                vector127
+                0x000000008010627b                vector128
+                0x0000000080106287                vector129
+                0x0000000080106293                vector130
+                0x000000008010629f                vector131
+                0x00000000801062ab                vector132
+                0x00000000801062b7                vector133
+                0x00000000801062c3                vector134
+                0x00000000801062cf                vector135
+                0x00000000801062db                vector136
+                0x00000000801062e7                vector137
+                0x00000000801062f3                vector138
+                0x00000000801062ff                vector139
+                0x000000008010630b                vector140
+                0x0000000080106317                vector141
+                0x0000000080106323                vector142
+                0x000000008010632f                vector143
+                0x000000008010633b                vector144
+                0x0000000080106347                vector145
+                0x0000000080106353                vector146
+                0x000000008010635f                vector147
+                0x000000008010636b                vector148
+                0x0000000080106377                vector149
+                0x0000000080106383                vector150
+                0x000000008010638f                vector151
+                0x000000008010639b                vector152
+                0x00000000801063a7                vector153
+                0x00000000801063b3                vector154
+                0x00000000801063bf                vector155
+                0x00000000801063cb                vector156
+                0x00000000801063d7                vector157
+                0x00000000801063e3                vector158
+                0x00000000801063ef                vector159
+                0x00000000801063fb                vector160
+                0x0000000080106407                vector161
+                0x0000000080106413                vector162
+                0x000000008010641f                vector163
+                0x000000008010642b                vector164
+                0x0000000080106437                vector165
+                0x0000000080106443                vector166
+                0x000000008010644f                vector167
+                0x000000008010645b                vector168
+                0x0000000080106467                vector169
+                0x0000000080106473                vector170
+                0x000000008010647f                vector171
+                0x000000008010648b                vector172
+                0x0000000080106497                vector173
+                0x00000000801064a3                vector174
+                0x00000000801064af                vector175
+                0x00000000801064bb                vector176
+                0x00000000801064c7                vector177
+                0x00000000801064d3                vector178
+                0x00000000801064df                vector179
+                0x00000000801064eb                vector180
+                0x00000000801064f7                vector181
+                0x0000000080106503                vector182
+                0x000000008010650f                vector183
+                0x000000008010651b                vector184
+                0x0000000080106527                vector185
+                0x0000000080106533                vector186
+                0x000000008010653f                vector187
+                0x000000008010654b                vector188
+                0x0000000080106557                vector189
+                0x0000000080106563                vector190
+                0x000000008010656f                vector191
+                0x000000008010657b                vector192
+                0x0000000080106587                vector193
+                0x0000000080106593                vector194
+                0x000000008010659f                vector195
+                0x00000000801065ab                vector196
+                0x00000000801065b7                vector197
+                0x00000000801065c3                vector198
+                0x00000000801065cf                vector199
+                0x00000000801065db                vector200
+                0x00000000801065e7                vector201
+                0x00000000801065f3                vector202
+                0x00000000801065ff                vector203
+                0x000000008010660b                vector204
+                0x0000000080106617                vector205
+                0x0000000080106623                vector206
+                0x000000008010662f                vector207
+                0x000000008010663b                vector208
+                0x0000000080106647                vector209
+                0x0000000080106653                vector210
+                0x000000008010665f                vector211
+                0x000000008010666b                vector212
+                0x0000000080106677                vector213
+                0x0000000080106683                vector214
+                0x000000008010668f                vector215
+                0x000000008010669b                vector216
+                0x00000000801066a7                vector217
+                0x00000000801066b3                vector218
+                0x00000000801066bf                vector219
+                0x00000000801066cb                vector220
+                0x00000000801066d7                vector221
+                0x00000000801066e3                vector222
+                0x00000000801066ef                vector223
+                0x00000000801066fb                vector224
+                0x0000000080106707                vector225
+                0x0000000080106713                vector226
+                0x000000008010671f                vector227
+                0x000000008010672b                vector228
+                0x0000000080106737                vector229
+                0x0000000080106743                vector230
+                0x000000008010674f                vector231
+                0x000000008010675b                vector232
+                0x0000000080106767                vector233
+                0x0000000080106773                vector234
+                0x000000008010677f                vector235
+                0x000000008010678b                vector236
+                0x0000000080106797                vector237
+                0x00000000801067a3                vector238
+                0x00000000801067af                vector239
+                0x00000000801067bb                vector240
+                0x00000000801067c7                vector241
+                0x00000000801067d3                vector242
+                0x00000000801067df                vector243
+                0x00000000801067eb                vector244
+                0x00000000801067f7                vector245
+                0x0000000080106803                vector246
+                0x000000008010680f                vector247
+                0x000000008010681b                vector248
+                0x0000000080106827                vector249
+                0x0000000080106833                vector250
+                0x000000008010683f                vector251
+                0x000000008010684b                vector252
+                0x0000000080106857                vector253
+                0x0000000080106863                vector254
+                0x000000008010686f                vector255
+ *fill*         0x000000008010687b        0x5 
+ .text          0x0000000080106880      0x94a vm.o
+                0x0000000080106a40                seginit
+                0x0000000080106ad0                switchkvm
+                0x0000000080106af0                switchuvm
+                0x0000000080106c00                inituvm
+                0x0000000080106c80                loaduvm
+                0x0000000080106d50                allocuvm
+                0x0000000080106e80                deallocuvm
+                0x0000000080106eb0                freevm
+                0x0000000080106f30                setupkvm
+                0x0000000080106fb0                kvmalloc
+                0x0000000080106fd0                clearpteu
+                0x0000000080107000                copyuvm
+                0x0000000080107100                uva2ka
+                0x0000000080107140                copyout
                 [!provide]                        PROVIDE (etext = .)
 
-.iplt           0x000000008010713a        0x0 load address 0x000000000010713a
- .iplt          0x000000008010713a        0x0 entry.o
+.iplt           0x00000000801071ca        0x0 load address 0x00000000001071ca
+ .iplt          0x00000000801071ca        0x0 entry.o
 
-.rodata         0x0000000080107140      0x9d3 load address 0x0000000000107140
+.rodata         0x00000000801071e0      0x9d3 load address 0x00000000001071e0
  *(.rodata .rodata.* .gnu.linkonce.r.*)
  .rodata.str1.1
-                0x0000000080107140       0x2d bio.o
+                0x00000000801071e0       0x2d bio.o
  .rodata.str1.1
-                0x000000008010716d       0x43 console.o
+                0x000000008010720d       0x43 console.o
                                          0x45 (size before relaxing)
- .rodata        0x00000000801071b0       0x11 console.o
+ .rodata        0x0000000080107250       0x11 console.o
  .rodata.str1.1
-                0x00000000801071c1        0xc exec.o
+                0x0000000080107261        0xc exec.o
  .rodata.str1.1
-                0x00000000801071cd       0x32 file.o
+                0x000000008010726d       0x32 file.o
                                          0x3c (size before relaxing)
  .rodata.str1.1
-                0x00000000801071ff       0xb6 fs.o
+                0x000000008010729f       0xb6 fs.o
                                          0xbe (size before relaxing)
- *fill*         0x00000000801072b5        0x3 
+ *fill*         0x0000000080107355        0x3 
  .rodata.str1.4
-                0x00000000801072b8       0x53 fs.o
+                0x0000000080107358       0x53 fs.o
  .rodata.str1.1
-                0x000000008010730b       0x68 ide.o
- *fill*         0x0000000080107373        0x1 
+                0x00000000801073ab       0x68 ide.o
+ *fill*         0x0000000080107413        0x1 
  .rodata.str1.4
-                0x0000000080107374       0x32 ioapic.o
+                0x0000000080107414       0x32 ioapic.o
  .rodata.str1.1
-                0x00000000801073a6        0xb kalloc.o
- *fill*         0x00000000801073b1        0xf 
- .rodata        0x00000000801073c0      0x220 kbd.o
+                0x0000000080107446        0xb kalloc.o
+ *fill*         0x0000000080107451        0xf 
+ .rodata        0x0000000080107460      0x220 kbd.o
  .rodata.str1.1
-                0x00000000801075e0       0x44 log.o
+                0x0000000080107680       0x44 log.o
  .rodata.str1.1
-                0x0000000080107624       0x14 main.o
+                0x00000000801076c4       0x14 main.o
  .rodata.str1.1
-                0x0000000080107638       0x22 mp.o
- *fill*         0x000000008010765a        0x2 
+                0x00000000801076d8       0x22 mp.o
+ *fill*         0x00000000801076fa        0x2 
  .rodata.str1.4
-                0x000000008010765c       0x1f mp.o
+                0x00000000801076fc       0x1f mp.o
  .rodata.str1.1
-                0x000000008010767b        0x5 pipe.o
+                0x000000008010771b        0x5 pipe.o
  .rodata.str1.1
-                0x0000000080107680       0xe2 proc.o
+                0x0000000080107720       0xe2 proc.o
                                          0xe8 (size before relaxing)
- *fill*         0x0000000080107762        0x2 
+ *fill*         0x0000000080107802        0x2 
  .rodata.str1.4
-                0x0000000080107764       0x26 proc.o
- *fill*         0x000000008010778a        0x2 
- .rodata        0x000000008010778c       0x18 proc.o
+                0x0000000080107804       0x26 proc.o
+ *fill*         0x000000008010782a        0x2 
+ .rodata        0x000000008010782c       0x18 proc.o
  .rodata.str1.1
-                0x00000000801077a4        0xb sleeplock.o
+                0x0000000080107844        0xb sleeplock.o
  .rodata.str1.1
-                0x00000000801077af       0x2e spinlock.o
+                0x000000008010784f       0x2e spinlock.o
  .rodata.str1.1
-                0x00000000801077dd       0x1c syscall.o
- *fill*         0x00000000801077f9        0x7 
- .rodata        0x0000000080107800       0x60 syscall.o
+                0x000000008010787d       0x1c syscall.o
+ *fill*         0x0000000080107899        0x7 
+ .rodata        0x00000000801078a0       0x60 syscall.o
  .rodata.str1.1
-                0x0000000080107860       0x61 sysfile.o
+                0x0000000080107900       0x61 sysfile.o
                                          0x63 (size before relaxing)
  .rodata.str1.1
-                0x00000000801078c1        0xa trap.o
- *fill*         0x00000000801078cb        0x1 
+                0x0000000080107961        0xa trap.o
+ *fill*         0x000000008010796b        0x1 
  .rodata.str1.4
-                0x00000000801078cc       0x9b trap.o
- *fill*         0x0000000080107967        0x1 
- .rodata        0x0000000080107968       0x80 trap.o
+                0x000000008010796c       0x9b trap.o
+ *fill*         0x0000000080107a07        0x1 
+ .rodata        0x0000000080107a08       0x80 trap.o
  .rodata.str1.1
-                0x00000000801079e8        0x8 uart.o
+                0x0000000080107a88        0x8 uart.o
  .rodata.str1.1
-                0x00000000801079f0      0x100 vm.o
+                0x0000000080107a90      0x100 vm.o
                                         0x106 (size before relaxing)
  .rodata.str1.4
-                0x0000000080107af0       0x23 vm.o
+                0x0000000080107b90       0x23 vm.o
 
-.rel.dyn        0x0000000080107b14        0x0 load address 0x0000000000107b14
- .rel.got       0x0000000080107b14        0x0 entry.o
- .rel.iplt      0x0000000080107b14        0x0 entry.o
- .rel.text      0x0000000080107b14        0x0 entry.o
+.rel.dyn        0x0000000080107bb4        0x0 load address 0x0000000000107bb4
+ .rel.got       0x0000000080107bb4        0x0 entry.o
+ .rel.iplt      0x0000000080107bb4        0x0 entry.o
+ .rel.text      0x0000000080107bb4        0x0 entry.o
  .rel.text.startup
-                0x0000000080107b14        0x0 entry.o
- .rel.data      0x0000000080107b14        0x0 entry.o
+                0x0000000080107bb4        0x0 entry.o
+ .rel.data      0x0000000080107bb4        0x0 entry.o
 
-.stab           0x0000000080107b13        0x0
+.stab           0x0000000080107bb3        0x0
                 [!provide]                        PROVIDE (__STAB_BEGIN__ = .)
  *(.stab)
                 [!provide]                        PROVIDE (__STAB_END__ = .)
 
-.stabstr        0x0000000080107b13        0x0
+.stabstr        0x0000000080107bb3        0x0
                 [!provide]                        PROVIDE (__STABSTR_BEGIN__ = .)
  *(.stabstr)
                 [!provide]                        PROVIDE (__STABSTR_END__ = .)
@@ -918,7 +918,7 @@ LOAD initcode
 LOAD entryother
 OUTPUT(kernel elf32-i386)
 
-.debug_line     0x0000000000000000     0x6ccc
+.debug_line     0x0000000000000000     0x6d55
  .debug_line    0x0000000000000000       0x41 entry.o
  .debug_line    0x0000000000000041      0x286 bio.o
  .debug_line    0x00000000000002c7      0x8fd console.o
@@ -942,14 +942,14 @@ OUTPUT(kernel elf32-i386)
  .debug_line    0x0000000000004f0f       0x43 swtch.o
  .debug_line    0x0000000000004f52      0x249 syscall.o
  .debug_line    0x000000000000519b      0x8f2 sysfile.o
- .debug_line    0x0000000000005a8d      0x196 sysproc.o
- .debug_line    0x0000000000005c23       0x48 trapasm.o
- .debug_line    0x0000000000005c6b      0x2c3 trap.o
- .debug_line    0x0000000000005f2e      0x290 uart.o
- .debug_line    0x00000000000061be      0x32f vectors.o
- .debug_line    0x00000000000064ed      0x7df vm.o
+ .debug_line    0x0000000000005a8d      0x21f sysproc.o
+ .debug_line    0x0000000000005cac       0x48 trapasm.o
+ .debug_line    0x0000000000005cf4      0x2c3 trap.o
+ .debug_line    0x0000000000005fb7      0x290 uart.o
+ .debug_line    0x0000000000006247      0x32f vectors.o
+ .debug_line    0x0000000000006576      0x7df vm.o
 
-.debug_info     0x0000000000000000    0x12340
+.debug_info     0x0000000000000000    0x123e2
  .debug_info    0x0000000000000000       0x26 entry.o
  .debug_info    0x0000000000000026      0x473 bio.o
  .debug_info    0x0000000000000499     0x1488 console.o
@@ -973,14 +973,14 @@ OUTPUT(kernel elf32-i386)
  .debug_info    0x000000000000c99c       0x26 swtch.o
  .debug_info    0x000000000000c9c2      0x9b4 syscall.o
  .debug_info    0x000000000000d376     0x1698 sysfile.o
- .debug_info    0x000000000000ea0e      0x998 sysproc.o
- .debug_info    0x000000000000f3a6       0x26 trapasm.o
- .debug_info    0x000000000000f3cc      0xbe2 trap.o
- .debug_info    0x000000000000ffae      0xdce uart.o
- .debug_info    0x0000000000010d7c       0x26 vectors.o
- .debug_info    0x0000000000010da2     0x159e vm.o
+ .debug_info    0x000000000000ea0e      0xa3a sysproc.o
+ .debug_info    0x000000000000f448       0x26 trapasm.o
+ .debug_info    0x000000000000f46e      0xbe2 trap.o
+ .debug_info    0x0000000000010050      0xdce uart.o
+ .debug_info    0x0000000000010e1e       0x26 vectors.o
+ .debug_info    0x0000000000010e44     0x159e vm.o
 
-.debug_abbrev   0x0000000000000000     0x3fc2
+.debug_abbrev   0x0000000000000000     0x3f8a
  .debug_abbrev  0x0000000000000000       0x14 entry.o
  .debug_abbrev  0x0000000000000014      0x21e bio.o
  .debug_abbrev  0x0000000000000232      0x485 console.o
@@ -1004,12 +1004,12 @@ OUTPUT(kernel elf32-i386)
  .debug_abbrev  0x0000000000002efc       0x14 swtch.o
  .debug_abbrev  0x0000000000002f10      0x1fd syscall.o
  .debug_abbrev  0x000000000000310d      0x344 sysfile.o
- .debug_abbrev  0x0000000000003451      0x1b5 sysproc.o
- .debug_abbrev  0x0000000000003606       0x14 trapasm.o
- .debug_abbrev  0x000000000000361a      0x24b trap.o
- .debug_abbrev  0x0000000000003865      0x2c2 uart.o
- .debug_abbrev  0x0000000000003b27       0x14 vectors.o
- .debug_abbrev  0x0000000000003b3b      0x487 vm.o
+ .debug_abbrev  0x0000000000003451      0x17d sysproc.o
+ .debug_abbrev  0x00000000000035ce       0x14 trapasm.o
+ .debug_abbrev  0x00000000000035e2      0x24b trap.o
+ .debug_abbrev  0x000000000000382d      0x2c2 uart.o
+ .debug_abbrev  0x0000000000003aef       0x14 vectors.o
+ .debug_abbrev  0x0000000000003b03      0x487 vm.o
 
 .debug_aranges  0x0000000000000000      0x3a8
  .debug_aranges
@@ -1118,7 +1118,7 @@ OUTPUT(kernel elf32-i386)
  .debug_str     0x0000000000000cb3       0xb7 sysfile.o
                                         0x54d (size before relaxing)
  .debug_str     0x0000000000000d6a       0x81 sysproc.o
-                                        0x3ca (size before relaxing)
+                                        0x3de (size before relaxing)
  .debug_str     0x0000000000000deb        0xa trapasm.o
                                          0x2d (size before relaxing)
  .debug_str     0x0000000000000df5       0x48 trap.o
@@ -1130,7 +1130,7 @@ OUTPUT(kernel elf32-i386)
  .debug_str     0x0000000000000e5c       0x73 vm.o
                                         0x460 (size before relaxing)
 
-.debug_loc      0x0000000000000000     0x684f
+.debug_loc      0x0000000000000000     0x6879
  .debug_loc     0x0000000000000000      0x126 bio.o
  .debug_loc     0x0000000000000126      0xaf9 console.o
  .debug_loc     0x0000000000000c1f      0x338 exec.o
@@ -1152,10 +1152,10 @@ OUTPUT(kernel elf32-i386)
  .debug_loc     0x00000000000047d6      0x6b5 string.o
  .debug_loc     0x0000000000004e8b      0x145 syscall.o
  .debug_loc     0x0000000000004fd0      0x736 sysfile.o
- .debug_loc     0x0000000000005706       0x59 sysproc.o
- .debug_loc     0x000000000000575f       0x7f trap.o
- .debug_loc     0x00000000000057de      0x344 uart.o
- .debug_loc     0x0000000000005b22      0xd2d vm.o
+ .debug_loc     0x0000000000005706       0x83 sysproc.o
+ .debug_loc     0x0000000000005789       0x7f trap.o
+ .debug_loc     0x0000000000005808      0x344 uart.o
+ .debug_loc     0x0000000000005b4c      0xd2d vm.o
 
 .debug_ranges   0x0000000000000000      0xce8
  .debug_ranges  0x0000000000000000       0x18 bio.o

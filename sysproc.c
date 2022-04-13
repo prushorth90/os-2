@@ -97,13 +97,17 @@ sys_mprotect(void)
   void *addr;
   int len;
   // FAILURE CASES
+  // CASE 2: Addr points to a region not in address space
+  // seen something in vm.c in argptr
+  // Not sure how to call
+  if(argint(0, &len) < 0) {
+    return -1;
+  }
+  addr = (void *)myproc()->vlimit;
   // CASE 1: seen in vm.c in loaduvm:  addr must be page aligned);
   if((int)addr%PGSIZE != 0 ){
     return -1;
   }
-  // CASE 2: Addr points to a region not in address space
-  // seen something in vm.c in argptr
-  // Not sure how to call
 
   // CASE 3: Len is negative or 0
   if(len <= 0){
@@ -119,19 +123,24 @@ sys_munprotect(void) {
   void *addr;
   int len;
   // FAILURE CASES
+  // CASE 2: Addr points to a region not in address space
+  // seen something in vm.c in argptr
+  // Not sure how to call
+  // initialize len like in sys_sleep
+  if(argint(0, &len) < 0){
+    return -1;
+  }
+  addr = (void *)myproc()->vlimit;
+
   // CASE 1: seen in vm.c in loaduvm:  addr must be page aligned);
   if((int)addr%PGSIZE != 0 ){
     return -1;
   }
-  // CASE 2: Addr points to a region not in address space
-  // seen something in vm.c in argptr
-  // Not sure how to call
-  
   // CASE 3: Len is negative or 0
   if(len <= 0){
     return -1;
   }
-  return mprotect(addr,len);
+  return munprotect(addr,len);
   //return 0;
 
 }
