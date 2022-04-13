@@ -96,6 +96,7 @@ sys_mprotect(void)
 {
   void *addr;
   int len;
+  struct proc *curproc = myproc();
   // FAILURE CASES
   // CASE 2: Addr points to a region not in address space
   // seen something in vm.c in argptr
@@ -104,6 +105,8 @@ sys_mprotect(void)
     return -1;
   }
   addr = (void *)myproc()->vlimit;
+  if((int) addr >= curproc->vlimit ||(int) addr < curproc->vbase) return -1;
+
   // CASE 1: seen in vm.c in loaduvm:  addr must be page aligned);
   if((int)addr%PGSIZE != 0 ){
     return -1;
