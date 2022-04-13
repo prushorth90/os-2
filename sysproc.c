@@ -102,6 +102,8 @@ sys_mprotect(void)
     return -1;
   }
   // CASE 2: Addr points to a region not in address space
+  // seen something in vm.c in argptr
+  // Not sure how to call
 
   // CASE 3: Len is negative or 0
   if(len <= 0){
@@ -122,6 +124,8 @@ sys_munprotect(void) {
     return -1;
   }
   // CASE 2: Addr points to a region not in address space
+  // seen something in vm.c in argptr
+  // Not sure how to call
   
   // CASE 3: Len is negative or 0
   if(len <= 0){
